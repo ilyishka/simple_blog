@@ -1,0 +1,17 @@
+<%= link_to "Add new post", new_post_path, class:"btn btn-primary mb-4 mt-4"%>
+
+<h2> All posts </h2>
+
+<% @posts.each do |post| %>
+  <div class="card mb-5 " style="width: 18rem;">
+ <%= image_tag post.photo %>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.description%></p>
+    <%= link_to "Show", post_path(post), class:"btn btn-primary" %>
+    <%= link_to "Edit", edit_post_path(post), class:"btn btn-warning" %>
+    <%= link_to "Destroy", post_path(post), data: { "turbo-method": :delete, confirmation: "Ты уверен?" }, class:"btn btn-danger" %>
+  </div>
+</div>
+
+<% end %>

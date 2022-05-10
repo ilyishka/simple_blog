@@ -1,0 +1,18 @@
+<%= form_with model: @post do |f|%>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "title", class:"mb-4" %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: "description", class:"mb-4" %>
+  </div>
+
+  <div>
+    <%= f.file_field :photo, class:"mb-4" %>
+  <div>
+
+  <%= f.submit "add post", class:'btn btn-primary'%>
+<% end %>
